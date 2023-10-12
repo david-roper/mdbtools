@@ -189,6 +189,7 @@ static MdbHandle *mdb_handle_from_stream(FILE *stream, MdbFileFlags flags) {
         /* JET4 needs additional masking with the DB creation date, currently unsupported */
         /* Bug - JET3 supports 20 byte passwords, this is currently just 14 bytes */
         memcpy(mdb->f->db_passwd, mdb->pg_buf + 0x42, sizeof(mdb->f->db_passwd));
+		printf(mdb->f->db_passwd);
     }
 
 	mdb_iconv_init(mdb);
